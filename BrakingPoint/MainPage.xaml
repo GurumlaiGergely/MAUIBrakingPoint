@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:BrakingPoint.Models"
+             x:Class="BrakingPoint.MainPage"
+             Title="Főoldal">
+
+    <FlexLayout>
+        <FlexLayout.Resources>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="50"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+        </FlexLayout.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="1" BackgroundColor="#db1229"/>
+            <Frame Grid.Row="1" BackgroundColor="#db1229" Rotation="165" BorderColor="#db1229" HeightRequest="450" WidthRequest="600"/>
+            <Frame Grid.Row="0" BackgroundColor="Black"/>
+            <VerticalStackLayout Grid.Row="0" VerticalOptions="Center">
+                <ContentView WidthRequest="300" HeightRequest="350" Margin="5">
+                    <Image Source="logo.png" Aspect="Fill" Margin="1"/>
+                </ContentView>
+            </VerticalStackLayout>
+            
+            
+            <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+                <Button x:Name="start" Text="START" WidthRequest="250" HeightRequest="50" VerticalOptions="Start" FontSize="25" Clicked="Start_Clicked"/>
+            </VerticalStackLayout>
+            
+        </Grid>
+    </FlexLayout>
+
+</ContentPage>
