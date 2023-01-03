@@ -16,14 +16,17 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
             </Style>
         </FlexLayout.Resources>
+        
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Frame Grid.Row="1" BackgroundColor="#db1229"/>
-            <Frame Grid.Row="1" BackgroundColor="#db1229" Rotation="165" BorderColor="#db1229" HeightRequest="450" WidthRequest="600"/>
-            <Frame Grid.Row="0" BackgroundColor="Black"/>
+            <VerticalStackLayout VerticalOptions="Center">
+                <ContentView Margin="5">
+                    <Image Source="bg.png" Aspect="Fill" Margin="1"/>
+                </ContentView>
+            </VerticalStackLayout>
             <VerticalStackLayout Grid.Row="0" VerticalOptions="Center">
                 <ContentView WidthRequest="300" HeightRequest="350" Margin="5">
                     <Image Source="logo.png" Aspect="Fill" Margin="1"/>
