@@ -13,9 +13,9 @@
         Icon="main.png"/>
         
     <ShellContent
-        Title="Versenyek"
-        ContentTemplate="{DataTemplate local:Races}"
-        Route="Races" 
+        Title="Adatok"
+        ContentTemplate="{DataTemplate local:Datas}"
+        Route="Datas" 
         Icon="races.png"/>
 
 </Shell>

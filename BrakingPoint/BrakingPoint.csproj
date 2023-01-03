@@ -61,7 +61,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Races.xaml">
+	  <Compile Update="Datas.xaml.cs">
+	    <DependentUpon>Datas.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Datas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

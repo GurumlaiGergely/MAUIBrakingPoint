@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BrakingPoint.Datas"
+             Title="Adatok">
+    <FlexLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3.9*"/>
+            </Grid.RowDefinitions>
+            <VerticalStackLayout VerticalOptions="Center">
+                <ContentView Margin="5">
+                    <Image Source="bg.png" Aspect="Fill" Margin="1"/>
+                </ContentView>
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Grid.Row="0"  VerticalOptions="Start">
+                <Border WidthRequest="310" HeightRequest="50" Margin="20,0,0,35">
+                    <Picker HorizontalTextAlignment="Center" FontSize="25"  Title="Versenyek" TitleColor="#db1229" SelectedIndex="0" WidthRequest="300" HeightRequest="50" x:Name="racePicker" SelectedIndexChanged="racePicker_SelectedIndexChanged" />
+                </Border>
+                <Border WidthRequest="310" HeightRequest="50" Margin="20,0,0,0">
+                    <Picker HorizontalTextAlignment="Center" FontSize="25"  Title="Pilóták" TitleColor="#db1229" SelectedIndex="0" WidthRequest="300" HeightRequest="50" x:Name="driverPicker" SelectedIndexChanged="driverPicker_SelectedIndexChanged" />
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1" >
+                <Label x:Name="driverName" Text="" VerticalOptions="Center" HorizontalOptions="Center" FontSize="25"/>
+            </VerticalStackLayout>
+        </Grid>
+        </FlexLayout>
+</ContentPage>

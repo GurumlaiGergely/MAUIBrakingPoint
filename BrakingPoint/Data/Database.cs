@@ -1,5 +1,4 @@
-﻿using BrakingPoint.Models;
-using SQLite;
+﻿using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +13,6 @@ namespace BrakingPoint.Data
 
         public Database(string dbPath)
         {
-            connection = new SQLiteAsyncConnection(dbPath);
-            connection.CreateTableAsync<RacesModel>().Wait();
         }
 
     }
