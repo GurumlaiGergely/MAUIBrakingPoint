@@ -3,10 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BrakingPoint.Races"
              Title="Versenyek">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <FlexLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <VerticalStackLayout VerticalOptions="Center">
+                <ContentView Margin="5">
+                    <Image Source="bg.png" Aspect="Fill" Margin="1"/>
+                </ContentView>
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Grid.Row="0"  VerticalOptions="Center">
+                <Button x:Name="races" Text="Futamok" WidthRequest="150" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="Center" FontSize="25" Clicked="races_Clicked" Margin="35,1,1,35"/>
+                <Border WidthRequest="310" HeightRequest="50" Margin="20,1,1,35">
+                    <Picker HorizontalTextAlignment="Center" FontSize="25"  Title="Pilóták" TitleColor="#db1229" SelectedIndex="0" WidthRequest="300" HeightRequest="50" x:Name="driverPicker" SelectedIndexChanged="driverPicker_SelectedIndexChanged" Margin="0,0,0,0" />
+                </Border>
+                
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="0"  VerticalOptions="Center">
+               
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1" >
+                <Label x:Name="driverName" Text="" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="25"/>
+            </VerticalStackLayout>
+
+        </Grid>
+        </FlexLayout>
 </ContentPage>
