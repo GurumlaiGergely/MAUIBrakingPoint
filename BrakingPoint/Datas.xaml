@@ -14,6 +14,13 @@
                     <Image Source="bg.png" Aspect="Fill" Margin="1"/>
                 </ContentView>
             </VerticalStackLayout>
+            <VerticalStackLayout VerticalOptions="Center" Grid.Row="1" >
+                <Border WidthRequest="200" HeightRequest="200" StrokeThickness="7" IsVisible="False" x:Name="Border" >
+                    <ContentView Margin="5">
+                        <Image Source="" HeightRequest="170" WidthRequest="170" IsVisible="False" x:Name="Image" />
+                    </ContentView>
+                </Border>
+            </VerticalStackLayout>
             
             <VerticalStackLayout Grid.Row="0"  VerticalOptions="Start">
                 <Border WidthRequest="310" HeightRequest="50" Margin="20,0,0,35">
