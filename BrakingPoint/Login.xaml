@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BrakingPoint.Login"
+             Title="Belépés">
+    <FlexLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <VerticalStackLayout VerticalOptions="Center">
+                <ContentView Margin="5">
+                    <Image Source="bg.png" Aspect="Fill" Margin="1"/>
+                </ContentView>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="0" VerticalOptions="Center">
+                <ContentView WidthRequest="300" HeightRequest="350">
+                    <Image Source="logo.png" Aspect="Fill" />
+                </ContentView>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Margin="0,150,0,0">
+                <Label Text="Belépés" FontSize="40" FontFamily="Sitka" />
+            </VerticalStackLayout>
+
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Grid.Row="1" >
+                <Label Text="👤 Felhasználónév" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,0,0,0"/>
+                <Grid>
+                    <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
+                        <Entry BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg felhasználónevét"/>
+                    </Frame>
+                </Grid>
+                <Label Text="🔒 Jelszó" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,20,0,0"/>
+                <Grid>
+                    <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
+                        <Entry BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg jelszavát"/>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+
+            <VerticalStackLayout Grid.Row="2" VerticalOptions="Center">
+                <Button x:Name="login" FontFamily="OpenSansBold" Text="Belépés" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25"  Margin="0,0,0,30"/>
+            </VerticalStackLayout>
+
+        </Grid>
+    </FlexLayout>
+</ContentPage>

@@ -28,14 +28,19 @@
                 </ContentView>
             </VerticalStackLayout>
             <VerticalStackLayout Grid.Row="0" VerticalOptions="Center">
-                <ContentView WidthRequest="300" HeightRequest="350" Margin="5">
-                    <Image Source="logo.png" Aspect="Fill" Margin="1"/>
+                <ContentView WidthRequest="300" HeightRequest="350">
+                    <Image Source="logo.png" Aspect="Fill" />
                 </ContentView>
             </VerticalStackLayout>
-            
+
+            <VerticalStackLayout VerticalOptions="Center" Grid.Row="0" Margin="0,150,0,0">
+                <Label Text="Üdvözöljük!" FontSize="40" FontFamily="Sitka" />
+                <Label Text="Lépjen be a folytatáshoz" FontSize="25" FontFamily="Sitka" />
+            </VerticalStackLayout>
             
             <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
-                <Button x:Name="start" Text="START" WidthRequest="250" HeightRequest="50" VerticalOptions="Start" FontSize="25" Clicked="Start_Clicked"/>
+                <Button x:Name="login" FontFamily="OpenSansBold" Text="Belépés" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="Login_Clicked" Margin="0,0,0,30"/>
+                <Button x:Name="register" FontFamily="OpenSansBold" Text="Regisztráció" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="register_Clicked"/>
             </VerticalStackLayout>
             
         </Grid>

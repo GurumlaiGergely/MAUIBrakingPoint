@@ -18,4 +18,16 @@
         Route="Datas" 
         Icon="races.png"/>
 
+    <ShellContent
+        Title="Belépés"
+        ContentTemplate="{DataTemplate local:Login}"
+        Route="Login" 
+        Icon="races.png"/>
+
+    <ShellContent
+        Title="Regisztráció"
+        ContentTemplate="{DataTemplate local:Registration}"
+        Route="Registration" 
+        Icon="races.png"/>
+
 </Shell>

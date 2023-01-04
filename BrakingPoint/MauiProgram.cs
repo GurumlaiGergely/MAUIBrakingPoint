@@ -10,8 +10,9 @@ public static class MauiProgram
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+				fonts.AddFont("OpenSans-Bold.ttf", "OpenSansBold");
+                fonts.AddFont("Sitka.ttc", "Sitka");
+            });
 
 		return builder.Build();
 	}

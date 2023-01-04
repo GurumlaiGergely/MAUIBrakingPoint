@@ -9,10 +9,14 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
     }
 
-    private void Start_Clicked(object sender, EventArgs e)
+    private void Login_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new Datas());
+        Navigation.PushAsync(new Login());
     }
 
+    private void register_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Registration());
+    }
 }
 
