@@ -51,7 +51,7 @@ public partial class Datas : ContentPage
             DriverModel.Rootobject root = JsonConvert.DeserializeObject<DriverModel.Rootobject>(text);
             var data = root.MRData.DriverTable.Drivers[0];
 
-            driverName.Text = $"Név: {data.givenName} {data.familyName}\n" +
+            stats1.Text = $"Név: {data.givenName} {data.familyName}\n" +
                 $"Szám: {data.permanentNumber}\n" +
                 $"Kód: {data.code}\n" +
                 $"Születési dátum: {data.dateOfBirth}\n" +
@@ -61,6 +61,14 @@ public partial class Datas : ContentPage
             Image.Source = $"{picked}.png";
             Border.IsVisible= true;
             racePicker.SelectedIndex = -1;
+
+            stats2.IsVisible = false;
+            betweenLabel.IsVisible = false;
+            stats2.Text = "";
+            info.IsVisible = false;
+
+            circuitStats.IsVisible = false;
+            circuitStats.Text = "";
         }
         else
             driverPicker.SelectedIndex = -1;
@@ -80,16 +88,31 @@ public partial class Datas : ContentPage
             var text = await client.GetStringAsync($"https://ergast.com/api/f1/2022/{picked}/results.json");
             RaceModel.Rootobject root = JsonConvert.DeserializeObject<RaceModel.Rootobject>(text);
 
-            string datas = "";
+            string datas1 = "";
+            string datas2 = "";
 
             for (int i = 0; i < 20; i++)
             {
                 var data = root.MRData.RaceTable.Races[0].Results[i];
-                datas += $"                 {data.position} | {data.Driver.code} | {data.laps}\n";
+                if (i < 10)
+                    datas1 += $" {data.position} | {data.Driver.code} | {data.laps}\n";
+                else
+                    datas2 += $" {data.position} | {data.Driver.code} | {data.laps}\n";
 
             }
-            driverName.Text = $"Helyezés | Versenyző | Futott kör \n{datas}";
-            driverName.FontSize = 20;
+            stats1.Text = datas1;
+            stats2.Text = datas2;
+            //stats2.FontSize = 20;
+
+            stats2.IsVisible = true;
+            betweenLabel.IsVisible = true;
+            info.IsVisible = true;
+
+            var circuitData = root.MRData.RaceTable.Races[0];
+            circuitStats.Text = $"Név: {circuitData.Circuit.circuitName}\n" +
+                $"Helyszín: {circuitData.Circuit.Location.locality}, {circuitData.Circuit.Location.country}\n" +
+                $"Dátum: {circuitData.date}, {circuitData.time}";
+            circuitStats.IsVisible = true;
 
             Image.Source = "";
             Image.IsVisible = false;

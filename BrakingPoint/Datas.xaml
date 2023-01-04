@@ -30,9 +30,16 @@
                     <Picker HorizontalTextAlignment="Center" FontSize="25"  Title="Pilóták" TitleColor="#db1229" SelectedIndex="0" WidthRequest="300" HeightRequest="50" x:Name="driverPicker" SelectedIndexChanged="driverPicker_SelectedIndexChanged" />
                 </Border>
             </VerticalStackLayout>
-            <VerticalStackLayout Grid.Row="1" >
-                <Label x:Name="driverName" Text="" VerticalOptions="Center" HorizontalOptions="Center" FontSize="25"/>
-            </VerticalStackLayout>
+
+            <Label x:Name="info" Text="Helyezés | Versenyző | Futott kör"  FontFamily="Sitka" FontSize="20" VerticalOptions="Start" HorizontalOptions="Center" Margin="13,0,40,0" Grid.Row="1" IsVisible="false"/>
+
+            <HorizontalStackLayout Grid.Row="1" >
+                <Label x:Name="stats1" FontFamily="Sitka" Text="" VerticalOptions="Start" HorizontalOptions="Center" FontSize="20" Margin="25,40,0,0"/>
+                <Label Text="|" x:Name="betweenLabel" FontFamily="Sitka" FontSize="25" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,40,20,0" IsVisible="false"/>
+                <Label x:Name="stats2" FontFamily="Sitka" Text="" VerticalOptions="Start" HorizontalOptions="Center" FontSize="20" Margin="0,40,0,0" IsVisible="false"/>
+            </HorizontalStackLayout>
+            
+            <Label x:Name="circuitStats" Grid.Row="1" FontFamily="Sitka" Text="heeeeeee" VerticalOptions="Center" HorizontalOptions="Start" FontSize="20" Margin="25,0,0,0" IsVisible="false"/>
         </Grid>
         </FlexLayout>
 </ContentPage>

@@ -10,10 +10,13 @@ namespace BrakingPoint.ViewModel
 {
     public class LoginViewModel
     {
-        private string _username, _password;
+        private string _username, _password, _passwordConf, _email;
 
         public string UserName { get => _username; set => _username = value; }
         public string Password { get => _password; set => _password = value; }
+        public string PasswordConf { get => _passwordConf; set => _passwordConf = value; }
+        public string Email { get => _email; set => _email = value; }
+
 
         public ICommand RegisterCommand { private set; get; }
 
@@ -34,7 +37,7 @@ namespace BrakingPoint.ViewModel
             {
                 if(string.Equals(loginData.Password, Password))
                 {
-                    await Navigation.PushAsync(new Datas());
+                    await Navigation.PushModalAsync(new Datas());
                 }
                 else
                 {
@@ -53,9 +56,25 @@ namespace BrakingPoint.ViewModel
             LoginModel lm = new LoginModel();
             lm.UserName = UserName;
             lm.Password = Password;
-            App.Connection.SaveLoginDataAsync(lm);
-            App.Current.MainPage.DisplayAlert("Siker!", "Sikeres regisztráció!", "Ok");
-            Navigation.PushAsync(new Login());
+            lm.PasswordConf = PasswordConf;
+            lm.Email= Email;
+            if (lm.Email == null || lm.UserName == null || lm.Password == null || lm.PasswordConf == null)
+            {
+                if (lm.Password == lm.PasswordConf)
+                {
+                    App.Connection.SaveLoginDataAsync(lm);
+                    App.Current.MainPage.DisplayAlert("Siker!", "Sikeres regisztráció!", "Ok");
+                    Navigation.PushModalAsync(new Login());
+                }
+                else
+                {
+                    App.Current.MainPage.DisplayAlert("Hiba!", "A jelszavak nem egyeznek!", "Ok");
+                }
+            }
+            else
+            {
+                App.Current.MainPage.DisplayAlert("Hiba!", "Kérem töltsön ki minden mezőt!", "Ok");
+            }
         }
     }
 }

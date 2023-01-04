@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BrakingPoint.Registration"
              Title="Regisztráció">
+    <ScrollView>
     <FlexLayout>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <VerticalStackLayout VerticalOptions="Center">
@@ -21,11 +22,11 @@
                 </ContentView>
             </VerticalStackLayout>
 
-            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Margin="0,70,0,20">
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Margin="0,120,0,20">
                 <Label Text="Regisztráció" FontSize="40" WidthRequest="250" FontFamily="Sitka" />
             </VerticalStackLayout>
 
-            <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Grid.Row="1" Margin="0,-50,0,20">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Grid.Row="1" Margin="0,10,0,20">
                 <Label Text="👤 Felhasználónév" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,0,0,0"/>
                 <Grid>
                     <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
@@ -41,22 +42,23 @@
                 <Label Text="🔒 Jelszó megerősítés" FontSize="20"  FontFamily="Sitka" HorizontalOptions="Start" Margin="15,20,0,0"/>
                 <Grid>
                     <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
-                        <Entry BackgroundColor="Transparent" IsPassword="True" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg jelszavát mégegyszer"/>
+                        <Entry Text="{Binding PasswordConf}" BackgroundColor="Transparent" IsPassword="True" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg jelszavát mégegyszer"/>
                     </Frame>
                 </Grid>
-                <Label Text="📧 Email" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,20,0,0"/>
+                <Label Text="📧 Email" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,0,0,0"/>
                 <Grid>
                     <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
-                        <Entry BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg email címét"/>
+                        <Entry Text="{Binding Email}" BackgroundColor="Transparent" Keyboard="Email" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg email címét"/>
                     </Frame>
                 </Grid>
                 
             </StackLayout>
 
             <VerticalStackLayout Grid.Row="2" VerticalOptions="Center">
-                <Button x:Name="register" Command="{Binding RegisterCommand}" FontFamily="OpenSansBold" Text="Regisztráció" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25"  Margin="0,0,0,-20"/>
+                <Button x:Name="register" Command="{Binding RegisterCommand}" FontFamily="OpenSansBold" Text="Regisztráció" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25"/>
             </VerticalStackLayout>
 
         </Grid>
     </FlexLayout>
+        </ScrollView>
 </ContentPage>
