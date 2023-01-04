@@ -29,32 +29,32 @@
                 <Label Text="👤 Felhasználónév" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,0,0,0"/>
                 <Grid>
                     <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
-                        <Entry BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="Adja meg felhasználónevét"/>
+                        <Entry Text="{Binding UserName}" BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg felhasználónevét"/>
                     </Frame>
                 </Grid>
                 <Label Text="🔒 Jelszó" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,20,0,0"/>
                 <Grid>
                     <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
-                        <Entry BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="Adja meg jelszavát"/>
+                        <Entry Text="{Binding Password}" BackgroundColor="Transparent" IsPassword="True" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg jelszavát"/>
                     </Frame>
                 </Grid>
-                <Label Text="🔒 Jelszó megerősítés" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,20,0,0"/>
+                <Label Text="🔒 Jelszó megerősítés" FontSize="20"  FontFamily="Sitka" HorizontalOptions="Start" Margin="15,20,0,0"/>
                 <Grid>
                     <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
-                        <Entry BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="Adja meg jelszavát mégegyszer"/>
+                        <Entry BackgroundColor="Transparent" IsPassword="True" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg jelszavát mégegyszer"/>
                     </Frame>
                 </Grid>
                 <Label Text="📧 Email" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,20,0,0"/>
                 <Grid>
                     <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
-                        <Entry BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="Adja meg email címét"/>
+                        <Entry BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg email címét"/>
                     </Frame>
                 </Grid>
                 
             </StackLayout>
 
             <VerticalStackLayout Grid.Row="2" VerticalOptions="Center">
-                <Button x:Name="register" FontFamily="OpenSansBold" Text="Regisztráció" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25"  Margin="0,0,0,-20"/>
+                <Button x:Name="register" Command="{Binding RegisterCommand}" FontFamily="OpenSansBold" Text="Regisztráció" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25"  Margin="0,0,0,-20"/>
             </VerticalStackLayout>
 
         </Grid>
