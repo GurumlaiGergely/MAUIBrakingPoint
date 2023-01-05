@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BrakingPoint.Login"
-             Title="Belépés">
+             Title="Sign in">
     <FlexLayout>
         <Grid>
             <Grid.RowDefinitions>
@@ -22,26 +22,26 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Margin="0,150,0,0">
-                <Label Text="Belépés" FontSize="40" FontFamily="Sitka" />
+                <Label Text="Sign in" FontSize="40" FontFamily="Sitka" />
             </VerticalStackLayout>
 
             <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Grid.Row="1" >
-                <Label Text="👤 Felhasználónév" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,0,0,0"/>
+                <Label Text="👤 Username" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,0,0,0"/>
                 <Grid>
                     <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
-                        <Entry Text="{Binding UserName}" BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg felhasználónevét"/>
+                        <Entry Text="{Binding UserName}" BackgroundColor="Transparent" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Enter username"/>
                     </Frame>
                 </Grid>
-                <Label Text="🔒 Jelszó" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,20,0,0"/>
+                <Label Text="🔒 Password" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,20,0,0"/>
                 <Grid>
                     <Frame WidthRequest="360" HorizontalOptions="Start" Margin="15,0,0,0" Opacity="0.8">
-                        <Entry Text="{Binding Password}" BackgroundColor="Transparent" IsPassword="True" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Adja meg jelszavát"/>
+                        <Entry Text="{Binding Password}" BackgroundColor="Transparent" IsPassword="True" TextColor="White" PlaceholderColor="LightGray" HeightRequest="50"  Margin="0,-20,0,-20" Placeholder="▸ Enter password"/>
                     </Frame>
                 </Grid>
             </StackLayout>
 
             <VerticalStackLayout Grid.Row="2" VerticalOptions="Center">
-                <Button x:Name="login" Command="{Binding LoginCommand}" FontFamily="OpenSansBold" Text="Belépés" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25"  Margin="0,0,0,30"/>
+                <Button x:Name="login" Command="{Binding LoginCommand}" FontFamily="OpenSansBold" Text="Sign in" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25"  Margin="0,0,0,30"/>
             </VerticalStackLayout>
 
         </Grid>

@@ -9,7 +9,8 @@ public partial class App : Application
 		InitializeComponent();
 
 		MainPage = new AppShell();
-	}
+        Application.Current.UserAppTheme = AppTheme.Dark;
+    }
 	static Database connection;
 	public static Database Connection
 	{

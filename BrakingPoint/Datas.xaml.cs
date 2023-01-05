@@ -10,12 +10,19 @@ public partial class Datas : ContentPage
 {
     private List<string> driversList = new List<string>()
     {
-        "Alexander Albon", "Fernando Alonso", "Valtteri Bottas", "Nyck deVries", "Pierre Gasly", "Lewis Hamilton", "Nico Hulkenberg", "Nicholas Latifi", "Charles Leclerc", "Kevin Magnussen", "Lando Norris", "Esteban Ocon", "Sergio Perez", "Daniel Ricciardo", "George Russell", "Carlos Sainz", "Mick Schumacher", "Lance Stroll", "Yuki Tsunoda", "Max Verstappen", "Sebastian Vettel", "Guanyu Zhou" 
+        "Alexander Albon", "Fernando Alonso", "Valtteri Bottas", "Nyck deVries", "Pierre Gasly", "Lewis Hamilton", 
+        "Nico Hulkenberg", "Nicholas Latifi", "Charles Leclerc", "Kevin Magnussen", "Lando Norris", "Esteban Ocon", 
+        "Sergio Perez", "Daniel Ricciardo", "George Russell", "Carlos Sainz", "Mick Schumacher", "Lance Stroll", 
+        "Yuki Tsunoda", "Max Verstappen", "Sebastian Vettel", "Guanyu Zhou" 
     };
 
     private List<string> racesList = new List<string>()
     {
-        "Bahreini nagydíj", "Szaúd-arábiai nagydíj", "Ausztrál nagydíj", "Emilia-romagnai nagydíj", "Miami nagydíj", "Spanyol nagydíj", "Monacói nagydíj", "Azeri nagydíj", "Kanadai nagydíj", "Brit nagydíj", "Osztrák nagydíj", "Francia nagydíj", "Magyar nagydíj", "Belga nagydíj", "Holland nagydíj", "Olasz nagydíj", "Szingapúri nagydíj", "Japán nagydíj", "Amerikai nagydíj", "Mexikóvárosi nagydíj", "São Paulo-i nagydíj", "Abu-Dzabi nagydíj"
+        "Bahrain Grand Prix", "Saudi Arabian Grand Prix", "Australian Grand Prix", "Emilia Romagna Grand Prix",
+        "Miami Grand Prix", "Spanish Grand Prix", "Monaco Grand Prix", "Azerbaijan Grand Prix", "Canadian Grand Prix", 
+        "British Grand Prix", "Austrian Grand Prix", "French Grand Prix", "Hungarian Grand Prix", "Belgian Grand Prix",
+        "Dutch Grand Prix", "Italian Grand Prix", "Singapore Grand Prix", "Japanese Grand Prix", "United States Grand Prix",
+        "Mexico City Grand Prix", "São Paulo Grand Prix", "Abu Dhabi Grand Prix"
     };
     public Datas()
     {
@@ -51,11 +58,11 @@ public partial class Datas : ContentPage
             DriverModel.Rootobject root = JsonConvert.DeserializeObject<DriverModel.Rootobject>(text);
             var data = root.MRData.DriverTable.Drivers[0];
 
-            stats1.Text = $"Név: {data.givenName} {data.familyName}\n" +
-                $"Szám: {data.permanentNumber}\n" +
-                $"Kód: {data.code}\n" +
-                $"Születési dátum: {data.dateOfBirth}\n" +
-                $"Nemzetiség: {data.nationality}";
+            stats1.Text = $"Name: {data.givenName} {data.familyName}\n" +
+                $"Car number: {data.permanentNumber}\n" +
+                $"Code: {data.code}\n" +
+                $"Date of birth: {data.dateOfBirth}\n" +
+                $"Nationality: {data.nationality}";
 
             Image.IsVisible = true;
             Image.Source = $"{picked}.png";
@@ -109,9 +116,9 @@ public partial class Datas : ContentPage
             info.IsVisible = true;
 
             var circuitData = root.MRData.RaceTable.Races[0];
-            circuitStats.Text = $"Név: {circuitData.Circuit.circuitName}\n" +
-                $"Helyszín: {circuitData.Circuit.Location.locality}, {circuitData.Circuit.Location.country}\n" +
-                $"Dátum: {circuitData.date}, {circuitData.time}";
+            circuitStats.Text = $"Name: {circuitData.Circuit.circuitName}\n" +
+                $"Location: {circuitData.Circuit.Location.locality}, {circuitData.Circuit.Location.country}\n" +
+                $"Date: {circuitData.date}, {circuitData.time}";
             circuitStats.IsVisible = true;
 
             Image.Source = "";

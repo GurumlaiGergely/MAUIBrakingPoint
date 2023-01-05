@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BrakingPoint.Datas"
-             Title="Adatok">
+             Title="Datas">
     <FlexLayout>
         <Grid>
             <Grid.RowDefinitions>
@@ -14,8 +14,8 @@
                     <Image Source="bg.png" Aspect="Fill" Margin="1"/>
                 </ContentView>
             </VerticalStackLayout>
-            <VerticalStackLayout VerticalOptions="Center" Grid.Row="1" >
-                <Border WidthRequest="200" HeightRequest="200" StrokeThickness="7" IsVisible="False" x:Name="Border" >
+            <VerticalStackLayout VerticalOptions="Center" Grid.Row="1" Margin="0,100,0,0" >
+                <Border WidthRequest="200" HeightRequest="200" StrokeThickness="7" IsVisible="false" x:Name="Border" >
                     <ContentView Margin="5">
                         <Image Source="" HeightRequest="170" WidthRequest="170" IsVisible="False" x:Name="Image" />
                     </ContentView>
@@ -23,23 +23,23 @@
             </VerticalStackLayout>
             
             <VerticalStackLayout Grid.Row="0"  VerticalOptions="Start">
-                <Border WidthRequest="310" HeightRequest="50" Margin="20,0,0,35">
-                    <Picker HorizontalTextAlignment="Center" FontSize="25"  Title="Versenyek" TitleColor="#db1229" SelectedIndex="0" WidthRequest="300" HeightRequest="50" x:Name="racePicker" SelectedIndexChanged="racePicker_SelectedIndexChanged" />
+                <Border WidthRequest="310" HeightRequest="50" Margin="20,50,0,35">
+                    <Picker HorizontalTextAlignment="Center" FontSize="20"  Title="Races" TitleColor="DarkRed" TextColor="#db1229" SelectedIndex="0" WidthRequest="300" HeightRequest="50" x:Name="racePicker" SelectedIndexChanged="racePicker_SelectedIndexChanged" />
                 </Border>
                 <Border WidthRequest="310" HeightRequest="50" Margin="20,0,0,0">
-                    <Picker HorizontalTextAlignment="Center" FontSize="25"  Title="Pilóták" TitleColor="#db1229" SelectedIndex="0" WidthRequest="300" HeightRequest="50" x:Name="driverPicker" SelectedIndexChanged="driverPicker_SelectedIndexChanged" />
+                    <Picker HorizontalTextAlignment="Center" FontSize="20"  Title="Drivers" TitleColor="DarkRed" TextColor="#db1229" SelectedIndex="0" WidthRequest="300" HeightRequest="50" x:Name="driverPicker" SelectedIndexChanged="driverPicker_SelectedIndexChanged" />
                 </Border>
             </VerticalStackLayout>
 
-            <Label x:Name="info" Text="Helyezés | Versenyző | Futott kör"  FontFamily="Sitka" FontSize="20" VerticalOptions="Start" HorizontalOptions="Center" Margin="13,0,40,0" Grid.Row="1" IsVisible="false"/>
+            <Label x:Name="info" Text="Position | Driver | Laps"  FontFamily="Sitka" FontSize="20" VerticalOptions="Start" HorizontalOptions="Center" Margin="50,50,40,0" Grid.Row="1" IsVisible="false"/>
 
             <HorizontalStackLayout Grid.Row="1" >
-                <Label x:Name="stats1" FontFamily="Sitka" Text="" VerticalOptions="Start" HorizontalOptions="Center" FontSize="20" Margin="25,40,0,0"/>
-                <Label Text="|" x:Name="betweenLabel" FontFamily="Sitka" FontSize="25" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,40,20,0" IsVisible="false"/>
-                <Label x:Name="stats2" FontFamily="Sitka" Text="" VerticalOptions="Start" HorizontalOptions="Center" FontSize="20" Margin="0,40,0,0" IsVisible="false"/>
+                <Label x:Name="stats1" FontFamily="Sitka" Text="" VerticalOptions="Start" HorizontalOptions="Center" FontSize="20" Margin="25,100,0,0"/>
+                <Label Text="|" x:Name="betweenLabel" FontFamily="Sitka" FontSize="25" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,100,20,0" IsVisible="false"/>
+                <Label x:Name="stats2" FontFamily="Sitka" Text="" VerticalOptions="Start" HorizontalOptions="Center" FontSize="20" Margin="0,100,0,0" IsVisible="false"/>
             </HorizontalStackLayout>
             
-            <Label x:Name="circuitStats" Grid.Row="1" FontFamily="Sitka" Text="heeeeeee" VerticalOptions="Center" HorizontalOptions="Start" FontSize="20" Margin="25,0,0,0" IsVisible="false"/>
+            <Label x:Name="circuitStats" Grid.Row="1" FontFamily="Sitka" Text="" VerticalOptions="Center" HorizontalOptions="Start" FontSize="20" Margin="25,150,0,0" IsVisible="false"/>
         </Grid>
         </FlexLayout>
 </ContentPage>

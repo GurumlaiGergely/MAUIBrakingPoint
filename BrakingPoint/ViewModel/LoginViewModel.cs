@@ -1,4 +1,6 @@
 ﻿using BrakingPoint.Models;
+using Plugin.ValidationRules;
+using Plugin.ValidationRules.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,12 +43,12 @@ namespace BrakingPoint.ViewModel
                 }
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert("Hiba!", "Hibás felhasználónév vagy jelszó", "Ok");
+                    await App.Current.MainPage.DisplayAlert("Error!", "Incorrect username or password", "Ok");
                 }
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("Hiba!", "Hibás felhasználónév vagy jelszó", "Ok");
+                await App.Current.MainPage.DisplayAlert("Error!", "Incorrect username or password", "Ok");
             }
             
         }
@@ -58,22 +60,63 @@ namespace BrakingPoint.ViewModel
             lm.Password = Password;
             lm.PasswordConf = PasswordConf;
             lm.Email= Email;
-            if (lm.Email == null || lm.UserName == null || lm.Password == null || lm.PasswordConf == null)
+            if (lm.Email != null && lm.UserName != null && lm.Password != null && lm.PasswordConf != null)
             {
-                if (lm.Password == lm.PasswordConf)
+
+                if (!char.IsLetter(Password[0]))
                 {
-                    App.Connection.SaveLoginDataAsync(lm);
-                    App.Current.MainPage.DisplayAlert("Siker!", "Sikeres regisztráció!", "Ok");
-                    Navigation.PushModalAsync(new Login());
+                    App.Current.MainPage.DisplayAlert("Error!", "Password's first character must be a letter.", "Ok");
+                }
+
+                if (!char.IsUpper(Password[0]))
+                {
+                    App.Current.MainPage.DisplayAlert("Error!", "Password's first letter must be Capitalize.", "Ok");
+                }
+
+                if (Password.Length < 8)
+                {
+                    App.Current.MainPage.DisplayAlert("Error!", "Password length must be 8 characters minimum.", "Ok");
+                }
+
+                if (!Password.Any(char.IsDigit))
+                {
+                    App.Current.MainPage.DisplayAlert("Error!", "Your password must contain numbers.", "Ok");
+                }
+
+                if (!Password.Any(char.IsSymbol) && !Password.Any(char.IsPunctuation))
+                {
+                    App.Current.MainPage.DisplayAlert("Error!", "Your password must contain symbols.", "Ok");
                 }
                 else
                 {
-                    App.Current.MainPage.DisplayAlert("Hiba!", "A jelszavak nem egyeznek!", "Ok");
+                    if (lm.Password == lm.PasswordConf)
+                    {
+                        App.Connection.SaveLoginDataAsync(lm);
+                        App.Current.MainPage.DisplayAlert("Success!", "Account creation was successful!", "Ok");
+                        Navigation.PushModalAsync(new Login());
+                    }
+                    else
+                    {
+                        App.Current.MainPage.DisplayAlert("Error!", "Passwords must match!", "Ok");
+                    }
                 }
+                
             }
             else
             {
-                App.Current.MainPage.DisplayAlert("Hiba!", "Kérem töltsön ki minden mezőt!", "Ok");
+                App.Current.MainPage.DisplayAlert("Error!", "Fill in all fields!", "Ok");
+            }
+        }
+
+    public class PasswordRule : IValidationRule<string>
+        {
+            public string ValidationMessage { get; set; }
+
+            public bool Check(string value)
+            {
+                
+
+                return true;
             }
         }
     }

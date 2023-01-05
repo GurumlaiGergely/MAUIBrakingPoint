@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:BrakingPoint.Models"
              x:Class="BrakingPoint.MainPage"
-             Title="Főoldal">
+             Title="Home">
 
     <FlexLayout>
         <FlexLayout.Resources>
@@ -34,13 +34,13 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout VerticalOptions="Center" Grid.Row="0" Margin="0,150,0,0">
-                <Label Text="Üdvözöljük!" FontSize="40" FontFamily="Sitka" />
-                <Label Text="Lépjen be a folytatáshoz" FontSize="25" FontFamily="Sitka" />
+                <Label Text="Welcome!" FontSize="40" FontFamily="Sitka" />
+                <Label Text="Sign in to continue" FontSize="25" FontFamily="Sitka" />
             </VerticalStackLayout>
             
             <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
-                <Button x:Name="login" FontFamily="OpenSansBold" Text="Belépés" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="Login_Clicked" Margin="0,0,0,30"/>
-                <Button x:Name="register" FontFamily="OpenSansBold" Text="Regisztráció" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="register_Clicked"/>
+                <Button x:Name="login" FontFamily="OpenSansBold" Text="Sign in" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="Login_Clicked" Margin="0,0,0,30"/>
+                <Button x:Name="register" FontFamily="OpenSansBold" Text="Create account" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="register_Clicked"/>
             </VerticalStackLayout>
             
         </Grid>
