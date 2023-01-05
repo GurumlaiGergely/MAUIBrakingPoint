@@ -23,7 +23,7 @@
             </VerticalStackLayout>
             
             <VerticalStackLayout Grid.Row="0"  VerticalOptions="Start">
-                <Border WidthRequest="310" HeightRequest="50" Margin="20,50,0,35">
+                <Border WidthRequest="310" HeightRequest="50" Margin="20,50,0,20">
                     <Picker HorizontalTextAlignment="Center" FontSize="20"  Title="Races" TitleColor="DarkRed" TextColor="#db1229" SelectedIndex="0" WidthRequest="300" HeightRequest="50" x:Name="racePicker" SelectedIndexChanged="racePicker_SelectedIndexChanged" />
                 </Border>
                 <Border WidthRequest="310" HeightRequest="50" Margin="20,0,0,0">

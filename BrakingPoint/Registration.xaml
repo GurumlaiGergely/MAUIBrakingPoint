@@ -22,7 +22,7 @@
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Start" Margin="0,10,0,20">
 
 
-                    <Label Text="Registration" FontSize="40" WidthRequest="250" FontFamily="Sitka" Margin="0,100,0,5" />
+                    <Label Text="Registration" FontSize="40" WidthRequest="250" FontFamily="Sitka" Margin="0,80,0,5" />
 
                     <Label Text="👤 Username" FontSize="20" FontFamily="Sitka" HorizontalOptions="Start" Margin="15,0,0,0"/>
                 <Grid>
