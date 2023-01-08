@@ -63,31 +63,31 @@ namespace BrakingPoint.ViewModel
             if (lm.Email != null && lm.UserName != null && lm.Password != null && lm.PasswordConf != null)
             {
 
-                if (!char.IsLetter(Password[0]))
+                if (!char.IsLetter(Password[0]) || !char.IsUpper(Password[0]))
                 {
-                    App.Current.MainPage.DisplayAlert("Error!", "Password's first character must be a letter.", "Ok");
+                    App.Current.MainPage.DisplayAlert("Error!", "Password's first character must be a capitalized letter.", "Ok");
                 }
 
-                if (!char.IsUpper(Password[0]))
+                /*else if (!char.IsUpper(Password[0]))
                 {
                     App.Current.MainPage.DisplayAlert("Error!", "Password's first letter must be Capitalize.", "Ok");
-                }
+                }*/
 
-                if (Password.Length < 8)
+                else if (Password.Length < 8)
                 {
                     App.Current.MainPage.DisplayAlert("Error!", "Password length must be 8 characters minimum.", "Ok");
                 }
 
-                if (!Password.Any(char.IsDigit))
+                else if (!Password.Any(char.IsDigit) || (!Password.Any(char.IsSymbol) && !Password.Any(char.IsPunctuation)))
                 {
-                    App.Current.MainPage.DisplayAlert("Error!", "Your password must contain numbers.", "Ok");
+                    App.Current.MainPage.DisplayAlert("Error!", "Your password must contain numbers and symbols.", "Ok");
                 }
 
-                if (!Password.Any(char.IsSymbol) && !Password.Any(char.IsPunctuation))
+                /*else if (!Password.Any(char.IsSymbol) && !Password.Any(char.IsPunctuation))
                 {
                     App.Current.MainPage.DisplayAlert("Error!", "Your password must contain symbols.", "Ok");
-                }
-                else
+                }*/
+                else // pwd: ok
                 {
                     if (lm.Password == lm.PasswordConf)
                     {

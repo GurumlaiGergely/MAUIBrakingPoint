@@ -3,47 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:BrakingPoint.Models"
              x:Class="BrakingPoint.MainPage"
-             Title="Home">
-
-    <FlexLayout>
-        <FlexLayout.Resources>
-            <Style TargetType="Label">
-                <Setter Property="FontSize" Value="50"/>
-                <Setter Property="HorizontalTextAlignment" Value="Center"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-            </Style>
-            <Style TargetType="Entry">
-                <Setter Property="HorizontalTextAlignment" Value="Center"/>
-            </Style>
-        </FlexLayout.Resources>
+             Title="">
         
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <VerticalStackLayout VerticalOptions="Center">
-                <ContentView Margin="5">
-                    <Image Source="bg.png" Aspect="Fill" Margin="1"/>
-                </ContentView>
-            </VerticalStackLayout>
-            <VerticalStackLayout Grid.Row="0" VerticalOptions="Center">
-                <ContentView WidthRequest="300" HeightRequest="350">
-                    <Image Source="logo.png" Aspect="Fill" />
-                </ContentView>
-            </VerticalStackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <VerticalStackLayout VerticalOptions="Center" Grid.Row="0" Margin="0,150,0,0">
-                <Label Text="Welcome!" FontSize="40" FontFamily="Sitka" />
-                <Label Text="Sign in to continue" FontSize="25" FontFamily="Sitka" />
-            </VerticalStackLayout>
+        <VerticalStackLayout VerticalOptions="Center">
+            <ContentView Margin="5">
+                <Image Source="bg.png" Aspect="Fill" Margin="1"/>
+            </ContentView>
+        </VerticalStackLayout>
             
-            <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
-                <Button x:Name="login" FontFamily="OpenSansBold" Text="Sign in" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="Login_Clicked" Margin="0,0,0,30"/>
-                <Button x:Name="register" FontFamily="OpenSansBold" Text="Create account" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="register_Clicked"/>
-            </VerticalStackLayout>
+        <ContentView WidthRequest="300" HeightRequest="350" VerticalOptions="Center">
+            <Image Source="logo.png" Aspect="Fill" />
+        </ContentView>
+
+        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Margin="0,150,0,0">
+            <Label Text="Welcome!" FontSize="40" FontFamily="Sitka" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Label Text="Sign in to continue" FontSize="25" FontFamily="Sitka" />
+        </VerticalStackLayout>
             
-        </Grid>
-    </FlexLayout>
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+            <Button x:Name="login" FontFamily="OpenSansBold" Text="Sign in" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="Login_Clicked" Margin="0,0,0,30"/>
+            <Button x:Name="register" FontFamily="OpenSansBold" Text="Create account" WidthRequest="250" HeightRequest="60" VerticalOptions="Start" FontSize="25" Clicked="register_Clicked"/>
+        </VerticalStackLayout>
+            
+    </Grid>
+
 
 </ContentPage>
